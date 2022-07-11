@@ -1,9 +1,15 @@
 import React, { useState } from 'react'
 import { AiOutlineClose } from 'react-icons/ai'
 import { Link } from 'react-router-dom'
+import { doc, onSnapshot, updateDoc } from 'firebase/firestore'
+import { db } from '../firebase'
+import { UserAuth } from '../context/AuthContext'
 
 const SavedCoin = () => {
     const [coins, setCoins] = useState([])
+    const { user } = UserAuth()
+
+
 
     return (
         <div>
